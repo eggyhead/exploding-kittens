@@ -1,14 +1,21 @@
-import * as firebase from 'firebase'
-import 'firebase/firestore'
-import setup from './setup'
+const firebase = require('firebase')
+// const firestore = require('firebase/firestore')
+const setup = require('./setup') 
 
 setup(firebase)
 
+const firestore = firebase.firestore()
+const database = firebase.database()
+const auth = firebase.auth()
+const storage = firebase.storage()
+
+
+module.exports = {
+
+}
+
 export default firebase
-export const firestore = firebase.firestore()
-export const database = firebase.database()
-export const auth = firebase.auth()
-export const storage = firebase.storage()
+export 
 
 // Export your models here. Example:
-export const userById = id => db.collection('users').doc(id)
+export const userById = id => firestore.collection('users').doc(id)
